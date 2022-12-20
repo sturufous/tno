@@ -158,6 +158,8 @@ namespace TNO.Core.Http
                 keycloakTokenUrl = $"{authority}{keycloakTokenUrl}";
             }
 
+            keycloakTokenUrl = "http://host.docker.internal:40001/auth/realms/tno/protocol/openid-connect/token";
+
             using var tokenMessage = new HttpRequestMessage(HttpMethod.Post, keycloakTokenUrl);
             // var authentication = $"{audience}:{secret}";
             // var base64 = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(authentication));
